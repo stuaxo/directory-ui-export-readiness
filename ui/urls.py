@@ -6,7 +6,6 @@ from enrolment.views import (
     CompaniesHouseSearchApiView,
     DomesticLandingView,
     EnrolmentView,
-    SubmitEnrolmentView,
 )
 from company.views import (
     SupplierAddressEditView,
@@ -49,11 +48,6 @@ urlpatterns = [
         r'^register/(?P<step>.+)$',
         EnrolmentView.as_view(url_name='register', done_step_name='finished'),
         name='register'
-    ),
-    url(
-        r'^register-submit$',
-        SubmitEnrolmentView.as_view(),
-        name='register-submit'
     ),
     url(
         r'^confirm-company-address$',
